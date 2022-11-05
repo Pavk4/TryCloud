@@ -18,21 +18,14 @@ public class ConfigurationReader {
     // We want to open the properties file and load to properties object ONLY ONCE before reading
     // having static block because static runs first
     static{
-
-        try{
         // 2- Create the object of FileInputStream
         // We need this object to open file as a stream in Java memory
-        FileInputStream file = new FileInputStream("config.properties");
-
+        try (FileInputStream file = new FileInputStream("config.properties")) {
         // 3- Load the properties object using FileInputStream object
         // Load "properties" object with the "file" we opened using FileInputStream
         properties.load(file);
 
-        // close the file after loading
-            // if we do not close the file, it will take space from computer memory
-        file.close();
-
-        }catch(IOException e){
+        } catch(IOException e){
           e.printStackTrace();
         }
     }
