@@ -29,7 +29,33 @@ public class TestStepDef {
 
     @When("I enter my username")
     public void iEnterMyUsername() {
-        loginPage.usernameBox.sendKeys("User6"+ Keys.ENTER);
+        int min = 1;
+        int max = 4;
+        int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+
+        String Username = "";
+
+        if (random_int == 1)
+        {
+            Username = "User6";
+        }
+
+        if (random_int == 2)
+        {
+            Username = "User36";
+        }
+
+        if (random_int == 3)
+        {
+            Username = "User66";
+        }
+
+        if (random_int == 4)
+        {
+            Username = "User96";
+        }
+
+        loginPage.usernameBox.sendKeys(Username + Keys.ENTER);
     }
 
     @When("I enter my password")
