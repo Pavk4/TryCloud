@@ -7,16 +7,16 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
     public BasePage(){
-        PageFactory.initElements(Driver.getDriver(), this);
+       PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "(//ul[@id='appmenu']//a)[1]")
-    public WebElement dashboardBtn;
+    //@FindBy(xpath = "(//ul[@id='appmenu']//a)[1]")
+  // public WebElement dashboardBtn;
 
-    @FindBy(xpath = "(//ul[@id='appmenu']//a)[2]")
-    public WebElement fileBtn;
+   // @FindBy(xpath = "(//ul[@id='appmenu']//a)[2]")
+  // public WebElement fileBtn;
 
-    @FindBy(linkText="Favorites")
-    public WebElement favoritesBtn;
+   @FindBy(linkText="Favorites")
+   public WebElement favoritesBtn;
 
 }

@@ -31,7 +31,7 @@ public class FavoriteModule_StepDefinitions {
     }
     @When("the user clicks the Files module")
     public void the_user_clicks_the_files_module() {
-        basePage.fileBtn.click();
+       // basePage.fileBtn.click();
         BrowserUtils.sleep(2);
     }
     @When("the user clicks action-icon from any file on the page")
