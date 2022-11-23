@@ -12,19 +12,19 @@ public class LoginPage {
     }
 
     @FindBy(xpath = "//input[@id='user']")
-    public WebElement username;
+    public WebElement usernameInput;
 
-    @FindBy (xpath = "//input[@id='password']")
-    public WebElement password;
+    @FindBy(xpath = "//input[@id='password']")
+    public WebElement passwordInput;
 
-    @FindBy (xpath = "//input[@id='submit-form']")
-    public WebElement submitBtn;
+    @FindBy(xpath = "//input[@id='submit-form']")
+    public WebElement loginBtn;
 
-    public void login(String user,String pass){
-        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
-        username.sendKeys(user);
-        password.sendKeys(pass);
-        submitBtn.click();
-        // Driver.getDriverPool().manage().timeouts().implicitlyWait(3000, TimeUnit.SECONDS);
+
+    public void login(String username, String password){
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
+        loginBtn.click();
+
     }
 }

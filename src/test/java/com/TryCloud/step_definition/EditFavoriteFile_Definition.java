@@ -2,6 +2,8 @@ package com.TryCloud.step_definition;
 
 import com.TryCloud.pages.EditFavoriteFilePage;
 import com.TryCloud.pages.LoginPage;
+import com.TryCloud.utilities.ConfigurationReader;
+import com.TryCloud.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -16,7 +18,9 @@ public class EditFavoriteFile_Definition {
     WebElement storeRemoveFile;
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
-        loginPage.login("User6","Userpass123");
+        Driver.getDriver().get(ConfigurationReader.getProperty("env"));
+        loginPage.login(ConfigurationReader.getProperty("username1")
+        ,ConfigurationReader.getProperty("password"));
     }
     @When("the user clicks the Files module")
     public void the_user_clicks_the_module() {
